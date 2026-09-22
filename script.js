@@ -64,6 +64,19 @@
   });
 })();
 
+// Avatar toggle: real photo <-> illustrated portrait
+(function () {
+  const avatar = document.getElementById("hero-avatar");
+  const btn = document.getElementById("avatar-toggle");
+  if (!avatar || !btn) return;
+
+  btn.addEventListener("click", () => {
+    const next = avatar.dataset.mode === "photo" ? "alt" : "photo";
+    avatar.dataset.mode = next;
+    btn.setAttribute("title", next === "alt" ? "Back to photo" : "Toggle avatar");
+  });
+})();
+
 // Footer year
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();

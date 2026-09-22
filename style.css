@@ -278,22 +278,48 @@ html.dark .icon-moon { display: block; }
   transition: filter .3s ease;
 }
 .hero-avatar-inner {
+  position: relative;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   background: var(--muted);
   overflow: hidden;
 }
-.avatar-photo {
+.avatar-face {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transform: scale(.92) rotate(-6deg);
+  transition: opacity .35s ease, transform .35s cubic-bezier(.34, 1.56, .64, 1);
+}
+#hero-avatar[data-mode="photo"] .avatar-photo,
+#hero-avatar[data-mode="alt"] .avatar-alt {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
 }
 
 .hero-info { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; padding-left: 4px; min-width: 0; }
 @media (min-width: 640px) { .hero-info { padding-left: 8px; } }
 
-.hero-top-line { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.hero-top-line { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.avatar-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: none;
+  background: none;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, transform .4s cubic-bezier(.34, 1.56, .64, 1);
+}
+.avatar-toggle-btn:hover { background: var(--accent); color: var(--foreground); }
+.avatar-toggle-btn:active { transform: rotate(180deg) scale(1.15); }
 .view-count {
   display: flex;
   align-items: center;

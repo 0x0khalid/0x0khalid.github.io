@@ -73,13 +73,22 @@
 
     <!-- ============ HERO ============ -->
     <div class="hero-row">
-      <div class="hero-avatar">
+      <div class="hero-avatar" id="hero-avatar" data-mode="photo">
         <div class="hero-avatar-inner">
-          <img src="pfp.jpg" alt="Khalid's avatar" class="avatar-photo">
+          <img src="pfp.jpg" alt="Khalid's avatar" class="avatar-face avatar-photo">
+          <img src="avatar-alt.png" alt="Illustrated portrait of Khalid" class="avatar-face avatar-alt">
         </div>
       </div>
       <div class="hero-info">
         <div class="hero-top-line">
+          <button id="avatar-toggle" class="avatar-toggle-btn" type="button" aria-label="Toggle avatar" title="Toggle avatar">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 2.1l4 4-4 4"/>
+              <path d="M3 12.7V12a4 4 0 0 1 4-4h14.8"/>
+              <path d="M7 21.9l-4-4 4-4"/>
+              <path d="M21 11.3V12a4 4 0 0 1-4 4H2.2"/>
+            </svg>
+          </button>
           <span class="view-count" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/></svg>
             <span>—</span>

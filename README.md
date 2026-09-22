@@ -24,6 +24,11 @@ from a different site — see below.
   and embedding it here is fine. It only ships weight 400 (regular);
   anywhere this page asks for a bolder weight, the browser synthesizes
   it, since there's no separate bold file.
+- **The second avatar** (`avatar-alt.png`) is the illustrated portrait
+  you uploaded directly — click the toggle button next to the hero
+  avatar (mirroring jdhruv.dev's "Toggle pfp" button, with a pop/spin
+  transition on both the button and the crossfade) to switch between
+  your photo and this portrait.
 
 ## What's real vs. placeholder
 
