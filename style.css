@@ -385,22 +385,10 @@ html.dark .icon-moon { display: block; }
 /* About */
 .about-list { display: flex; flex-direction: column; gap: 12px; }
 .about-list li {
-  position: relative;
-  padding-left: 18px;
   font-family: var(--font-mono);
   font-size: 14px;
   line-height: 1.65;
   color: var(--foreground);
-}
-.about-list li::before {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 9px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--muted-foreground);
 }
 
 .now-playing-wrap { max-width: 380px; margin: 20px auto 0; }
