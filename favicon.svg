@@ -1,14 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <style>
-    .bg { fill: #09090b; }
-    .fg { fill: #fafafa; }
-    @media (prefers-color-scheme: light) {
-      .bg { fill: #fafafa; }
-      .fg { fill: #09090b; }
+    .fg { fill: #09090b; }
+    @media (prefers-color-scheme: dark) {
+      .fg { fill: #fafafa; }
     }
   </style>
-  <rect class="bg" width="32" height="32" rx="8"/>
   <text class="fg" x="16" y="21" text-anchor="middle"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif"
-        font-weight="700" font-size="12">⁵ᵉ⁹</text>
+        font-weight="700" font-size="13">⁵ᵉ⁹</text>
 </svg>
