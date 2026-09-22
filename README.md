@@ -44,8 +44,6 @@ handle, and display name were available from the public page.
 Everything else is still a placeholder — search `index.html` for
 `EDIT:` comments to find every spot to personalize:
 
-- About section (3 bullet points — still generic; couldn't pull this
-  from LinkedIn, see below)
 - Nav "Projects" link (points at `#experience` for now) and "More"
   dropdown items (currently empty placeholders)
 - LinkedIn link (currently `#`, needs a real URL)
@@ -62,14 +60,12 @@ is wrong. Unlike jdhruv.dev's live-fetched contribution graph and real
 Spotify/view-counter integrations, this is a static image and static
 placeholders — there's no backend behind them.
 
-## LinkedIn About — not pulled yet
+## About text
 
-I don't have your LinkedIn profile URL, so I couldn't fetch anything
-from it. Even with the URL, LinkedIn blocks unauthenticated scraping
-of profile content (it requires a logged-in session to show the About
-section) — so the reliable path is you pasting the About text here
-directly, or sharing the profile URL and I'll try, but it may come
-back empty depending on LinkedIn's current blocking.
+Pasted directly (LinkedIn blocks unauthenticated scraping of profile
+content, so this was the reliable path rather than fetching a URL).
+Grammar-checked before it went in — no changes needed, it was already
+correct.
 
 ## Preview locally
 
