@@ -392,11 +392,17 @@ html.dark .icon-moon { display: block; }
 }
 
 .now-playing-wrap { max-width: 380px; margin: 20px auto 0; }
+.now-playing-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card);
+  padding: 10px;
+}
 .now-playing-embed {
   display: block;
   width: 100%;
-  border-radius: 12px;
-  border: 1px solid var(--border);
+  border-radius: 10px;
+  border: none;
 }
 .now-playing-fallback {
   display: flex;
