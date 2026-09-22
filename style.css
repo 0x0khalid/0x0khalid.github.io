@@ -278,52 +278,22 @@ html.dark .icon-moon { display: block; }
   transition: filter .3s ease;
 }
 .hero-avatar-inner {
-  position: relative;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   background: var(--muted);
   overflow: hidden;
 }
-.avatar-face {
-  position: absolute;
-  inset: 0;
+.avatar-photo {
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: opacity .35s ease;
+  object-fit: cover;
 }
-.avatar-photo { object-fit: cover; }
-.avatar-camel {
-  object-fit: contain;
-  padding: 16%;
-  box-sizing: border-box;
-  background: linear-gradient(180deg, var(--muted), var(--background));
-}
-#hero-avatar[data-mode="photo"] .avatar-photo { opacity: 1; }
-#hero-avatar[data-mode="camel"] .avatar-camel { opacity: 1; }
-#hero-avatar[data-mode="camel"] { animation: avatar-pop .3s ease; }
-@keyframes avatar-pop { 0% { transform: scale(.96); } 60% { transform: scale(1.02); } 100% { transform: scale(1); } }
 
 .hero-info { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; padding-left: 4px; min-width: 0; }
 @media (min-width: 640px) { .hero-info { padding-left: 8px; } }
 
-.hero-top-line { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.avatar-toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  border: none;
-  background: none;
-  color: var(--muted-foreground);
-  cursor: pointer;
-  transition: background-color .15s ease, color .15s ease, transform .2s ease;
-}
-.avatar-toggle-btn:hover { background: var(--accent); color: var(--foreground); }
-.avatar-toggle-btn:active { transform: rotate(180deg); }
+.hero-top-line { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
 .view-count {
   display: flex;
   align-items: center;
@@ -511,25 +481,9 @@ html.dark .icon-moon { display: block; }
 .site-footer { padding: 0 0 24px; }
 .footer-frame { border-top: none; }
 .footer-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 12px;
   padding: 20px 16px 12px;
   border-left: 1px solid var(--edge);
   border-right: 1px solid var(--edge);
-}
-.footer-mascot {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  object-fit: contain;
-  opacity: .9;
-  animation: mascot-bob 3.2s ease-in-out infinite;
-}
-@keyframes mascot-bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
 }
 .footer-text {
   display: flex;

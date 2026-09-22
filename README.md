@@ -24,11 +24,6 @@ from a different site — see below.
   and embedding it here is fine. It only ships weight 400 (regular);
   anywhere this page asks for a bolder weight, the browser synthesizes
   it, since there's no separate bold file.
-- **The camel** (`camel.svg`, used for the avatar-toggle and the footer
-  mascot) is Twemoji's dromedary camel emoji, not hand-drawn — see
-  [github.com/jdecked/twemoji](https://github.com/jdecked/twemoji).
-  Graphics are licensed CC-BY 4.0 (Twitter, Inc and other contributors);
-  keep that credit if you keep the icon.
 
 ## What's real vs. placeholder
 
@@ -36,8 +31,8 @@ Pulled from your actual X profile (`@5e9`, display name "Khalid") by
 fetching the page source directly, not guessed:
 
 - **Photo** — `pfp.jpg` is your real X profile photo (400×400), used
-  for the hero avatar (the header keeps a plain "K" mark, matching how
-  jdhruv.dev also keeps its header icon separate from the hero photo).
+  for the hero avatar. It's the only avatar image now; the camel
+  toggle/mascot was removed on request.
 - **X/Twitter link** — corrected to `https://x.com/5e9`. The earlier
   version pointed at `x.com/0x0khalid`, which doesn't exist as an
   account (X returns "User Profile Not Found" for it).
@@ -49,9 +44,8 @@ handle, and display name were available from the public page.
 Everything else is still a placeholder — search `index.html` for
 `EDIT:` comments to find every spot to personalize:
 
-- Hero subheading/role (currently "Software Engineer")
-- Hero status line (currently "Building things")
-- About section (3 bullet points — currently generic)
+- About section (3 bullet points — still generic; couldn't pull this
+  from LinkedIn, see below)
 - Nav "Projects" link (points at `#experience` for now) and "More"
   dropdown items (currently empty placeholders)
 - LinkedIn link (currently `#`, needs a real URL)
@@ -67,6 +61,15 @@ account via ghchart.rshah.org — no edit needed there unless the username
 is wrong. Unlike jdhruv.dev's live-fetched contribution graph and real
 Spotify/view-counter integrations, this is a static image and static
 placeholders — there's no backend behind them.
+
+## LinkedIn About — not pulled yet
+
+I don't have your LinkedIn profile URL, so I couldn't fetch anything
+from it. Even with the URL, LinkedIn blocks unauthenticated scraping
+of profile content (it requires a logged-in session to show the About
+section) — so the reliable path is you pasting the About text here
+directly, or sharing the profile URL and I'll try, but it may come
+back empty depending on LinkedIn's current blocking.
 
 ## Preview locally
 
