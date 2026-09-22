@@ -49,7 +49,7 @@ handle, and display name were available from the public page.
 Everything else is still a placeholder — search `index.html` for
 `EDIT:` comments to find every spot to personalize:
 
-- "More" dropdown items (currently empty placeholders)
+- "More" dropdown's "Blog" item (still `#`; "Repo" now links to your GitHub profile)
 - Footer line ("Built with code and coffee")
 
 ## Projects and GitHub Activity — what's actually real
