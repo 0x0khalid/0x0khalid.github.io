@@ -496,20 +496,34 @@ html.dark .icon-moon { display: block; }
 }
 
 /* ---------- Footer ---------- */
-.site-footer { padding: 0 0 24px; }
+.site-footer { padding: 0 0 56px; }
 .footer-frame { border-top: none; }
 .footer-row {
-  padding: 72px 16px 12px;
+  padding: 88px 16px 16px;
+  display: flex;
+  justify-content: center;
   border-left: 1px solid var(--edge);
   border-right: 1px solid var(--edge);
 }
 .footer-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
   font-family: var(--font-mono);
-  font-size: 12px;
+}
+.footer-text span:first-child {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--foreground);
+  letter-spacing: -.01em;
+}
+.footer-text span:last-child {
+  font-size: 11px;
   color: var(--muted-foreground);
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 480px) {
