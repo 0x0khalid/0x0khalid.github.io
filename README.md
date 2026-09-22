@@ -50,8 +50,6 @@ Everything else is still a placeholder — search `index.html` for
 `EDIT:` comments to find every spot to personalize:
 
 - "More" dropdown items (currently empty placeholders)
-- LinkedIn link (currently `#`, needs a real URL)
-- Email link (currently `mailto:you@example.com`)
 - Footer line ("Built with code and coffee")
 
 ## Projects and GitHub Activity — what's actually real
