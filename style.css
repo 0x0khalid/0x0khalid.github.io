@@ -597,7 +597,7 @@ html.dark .icon-moon { display: block; }
 }
 .footer-tagline {
   font-family: var(--font-technical);
-  font-size: 12.5px;
+  font-size: 10px;
   font-weight: 400;
   color: var(--muted-foreground);
   letter-spacing: .01em;
