@@ -56,14 +56,11 @@ Everything else is still a placeholder — search `index.html` for
 - Resume link (currently `resume.pdf`, which doesn't exist yet — add the file or remove the link)
 - Footer line ("Built with code and coffee")
 
-## Projects and GitHub Activity — what's actually real
+## GitHub Activity — what's actually real
 
-- **Projects** now shows `0xkhalid`, your most recently pushed public
-  repo (checked via `gh repo list`, not guessed). Worth knowing: it's
-  a forked Notion-to-GitHub-Pages template (using a tool called
-  Loconotion), still carrying its default README — not something
-  built from scratch. If you'd rather showcase a different project,
-  swap it in `index.html` (marked `EDIT:`).
+- **Projects** is back to a generic placeholder (search `index.html`
+  for `EDIT:`) — it briefly showed `0xkhalid`, your most recently
+  pushed public repo, but that was removed on request.
 - **GitHub Activity** is now `github-activity.svg`, a downloaded
   snapshot of your real contribution graph from ghchart.rshah.org,
   self-hosted instead of loaded from that external URL. It's a
