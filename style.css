@@ -363,11 +363,11 @@ html.dark .icon-moon { display: block; }
 /* Glitch transition on avatar toggle -- scanline flicker + RGB
    channel split, briefly, while the avatar swaps */
 @keyframes avatar-glitch-jitter {
-  0%, 100% { transform: translate(0, 0); }
-  20% { transform: translate(-2px, 1px); }
-  40% { transform: translate(2px, -1px); }
-  60% { transform: translate(-1.5px, 1.5px); }
-  80% { transform: translate(1.5px, -1px); }
+  0%, 100% { transform: scale(1.12) translate(0, 0); }
+  20% { transform: scale(1.12) translate(-2px, 1px); }
+  40% { transform: scale(1.12) translate(2px, -1px); }
+  60% { transform: scale(1.12) translate(-1.5px, 1.5px); }
+  80% { transform: scale(1.12) translate(1.5px, -1px); }
 }
 @keyframes avatar-glitch-scan {
   0% { background-position: 0 -10%; opacity: .6; }
