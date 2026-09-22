@@ -3,7 +3,7 @@
 Personal homepage, closely modeled on jdhruv.dev's real layout: bordered
 "screen-line" column with corner tick marks, diagonal-stripe section
 dividers, hero with avatar + name + status, an About panel (bullet list)
-with a Now Playing card, a Connect panel with six link pills, a GitHub
+with a real Spotify embed player, a Connect panel with link pills, a GitHub
 Activity panel, and a collapsible Projects timeline. Colors,
 spacing and the header/footer nav structure (Home, Projects, More
 dropdown, search, theme toggle) are pulled from jdhruv.dev's own
@@ -73,6 +73,15 @@ Unlike jdhruv.dev's live-fetched activity graph and Spotify/view-counter
 integrations, there's no backend behind anything on this page — it's
 all static, including the eye icon next to your name, which is just a
 decorative "—" placeholder, not a real counter.
+
+## Now Playing
+
+The About panel's music widget is now a real Spotify embed (the
+official `open.spotify.com/embed/track/...` iframe, fetched track
+info via Spotify's public oEmbed API to confirm it resolves) — it
+actually plays, not a static placeholder. Currently set to "وطني
+العظيم" (track id `51FxGCq0VTXkC8R77FhXy2`). Swap the id in the
+`src` URL in `index.html` to change the track.
 
 ## About text
 
