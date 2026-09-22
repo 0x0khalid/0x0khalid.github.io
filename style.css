@@ -1,3 +1,22 @@
+/* Self-hosted fonts (downloaded from Google Fonts' own gstatic files),
+   so rendering doesn't depend on a third-party stylesheet or CSP rules
+   in whatever environment this page is viewed in. Both are variable
+   fonts covering weights 400-900 in one file. */
+@font-face {
+  font-family: "Geist";
+  src: url("fonts/Geist-Variable.woff2") format("woff2-variations"), url("fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("fonts/GeistMono-Variable.woff2") format("woff2-variations"), url("fonts/GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Color tokens copied from jdhruv.dev's compiled CSS (light + dark) */
 :root {
   --background: #ffffff;
@@ -287,9 +306,10 @@ html.dark .icon-moon { display: block; }
 }
 .avatar-photo { object-fit: cover; }
 .avatar-camel {
-  color: var(--muted-foreground);
-  padding: 14%;
+  object-fit: contain;
+  padding: 16%;
   box-sizing: border-box;
+  background: linear-gradient(180deg, var(--muted), var(--background));
 }
 #hero-avatar[data-mode="photo"] .avatar-photo { opacity: 1; }
 #hero-avatar[data-mode="camel"] .avatar-camel { opacity: 1; }
@@ -299,7 +319,7 @@ html.dark .icon-moon { display: block; }
 .hero-info { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; padding-left: 4px; min-width: 0; }
 @media (min-width: 640px) { .hero-info { padding-left: 8px; } }
 
-.hero-top-line { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.hero-top-line { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .avatar-toggle-btn {
   display: flex;
   align-items: center;
@@ -503,11 +523,11 @@ html.dark .icon-moon { display: block; }
   border-right: 1px solid var(--edge);
 }
 .footer-mascot {
-  width: 64px;
+  width: 40px;
   height: 40px;
   flex-shrink: 0;
-  color: var(--muted-foreground);
-  opacity: .8;
+  object-fit: contain;
+  opacity: .9;
   animation: mascot-bob 3.2s ease-in-out infinite;
 }
 @keyframes mascot-bob {

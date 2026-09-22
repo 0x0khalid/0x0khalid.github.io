@@ -13,13 +13,31 @@ One real difference: jdhruv.dev's pixel-style headings use Vercel's
 custom "GeistPixel" typeface, which isn't publicly distributed. This
 site approximates it with Geist Mono at a heavy weight instead.
 
+## Fonts and icons — where they actually came from
+
+- **Geist / Geist Mono** are self-hosted here as `fonts/Geist-Variable.woff2`
+  and `fonts/GeistMono-Variable.woff2`, downloaded directly from Google
+  Fonts' own font files (both are variable fonts, covering every weight
+  400-900 in one file each). Earlier this loaded them from a
+  `fonts.googleapis.com` `<link>` instead, which depends on two external
+  origins (`fonts.googleapis.com` for the CSS, `fonts.gstatic.com` for
+  the actual font binaries) both being reachable and unblocked in
+  whatever browser or sandbox renders the page. Self-hosting removes
+  that dependency entirely.
+- **The camel** (`camel.svg`, used for the avatar-toggle and the footer
+  mascot) is Twemoji's dromedary camel emoji, not hand-drawn — see
+  [github.com/jdecked/twemoji](https://github.com/jdecked/twemoji).
+  Graphics are licensed CC-BY 4.0 (Twitter, Inc and other contributors);
+  keep that credit if you keep the icon.
+
 ## What's real vs. placeholder
 
 Pulled from your actual X profile (`@5e9`, display name "Khalid") by
 fetching the page source directly, not guessed:
 
 - **Photo** — `pfp.jpg` is your real X profile photo (400×400), used
-  for both the header avatar and the hero avatar.
+  for the hero avatar (the header keeps a plain "K" mark, matching how
+  jdhruv.dev also keeps its header icon separate from the hero photo).
 - **X/Twitter link** — corrected to `https://x.com/5e9`. The earlier
   version pointed at `x.com/0x0khalid`, which doesn't exist as an
   account (X returns "User Profile Not Found" for it).
