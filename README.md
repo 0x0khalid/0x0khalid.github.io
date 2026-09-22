@@ -13,18 +13,29 @@ One real difference: jdhruv.dev's pixel-style headings use Vercel's
 custom "GeistPixel" typeface, which isn't publicly distributed. This
 site approximates it with Geist Mono at a heavy weight instead.
 
-## What's a placeholder right now
+## What's real vs. placeholder
 
-I didn't have your real bio, role, work history, education, or social
-links, so these are placeholders — search `index.html` for `EDIT:`
-comments to find every spot to personalize:
+Pulled from your actual X profile (`@5e9`, display name "Khalid") by
+fetching the page source directly, not guessed:
+
+- **Photo** — `pfp.jpg` is your real X profile photo (400×400), used
+  for both the header avatar and the hero avatar.
+- **X/Twitter link** — corrected to `https://x.com/5e9`. The earlier
+  version pointed at `x.com/0x0khalid`, which doesn't exist as an
+  account (X returns "User Profile Not Found" for it).
+
+X doesn't expose your bio text, location, or link without an
+authenticated API call, so I couldn't pull those — only the photo,
+handle, and display name were available from the public page.
+
+Everything else is still a placeholder — search `index.html` for
+`EDIT:` comments to find every spot to personalize:
 
 - Hero subheading/role (currently "Software Engineer")
 - Hero status line (currently "Building things")
 - About section (3 bullet points — currently generic)
 - Nav "Projects" link (points at `#experience` for now) and "More"
   dropdown items (currently empty placeholders)
-- X/Twitter link (currently points to `x.com/0x0khalid` — confirm it's right)
 - LinkedIn link (currently `#`, needs a real URL)
 - Email link (currently `mailto:you@example.com`)
 - Medium link (currently `#`)
