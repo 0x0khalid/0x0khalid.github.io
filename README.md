@@ -54,15 +54,24 @@ Everything else is still a placeholder — search `index.html` for
 - Email link (currently `mailto:you@example.com`)
 - Medium link (currently `#`)
 - Resume link (currently `resume.pdf`, which doesn't exist yet — add the file or remove the link)
-- Projects (one placeholder entry — the section that used to be
-  "Experience" was replaced with this on request)
 - Footer line ("Built with code and coffee")
 
-The GitHub activity chart already points at the real `0x0khalid` GitHub
-account via ghchart.rshah.org — no edit needed there unless the username
-is wrong. Unlike jdhruv.dev's live-fetched contribution graph and real
-Spotify/view-counter integrations, this is a static image and static
-placeholders — there's no backend behind them.
+## Projects and GitHub Activity — what's actually real
+
+- **Projects** now shows `0xkhalid`, your most recently pushed public
+  repo (checked via `gh repo list`, not guessed). Worth knowing: it's
+  a forked Notion-to-GitHub-Pages template (using a tool called
+  Loconotion), still carrying its default README — not something
+  built from scratch. If you'd rather showcase a different project,
+  swap it in `index.html` (marked `EDIT:`).
+- **GitHub Activity** is now `github-activity.svg`, a downloaded
+  snapshot of your real contribution graph from ghchart.rshah.org,
+  self-hosted instead of loaded from that external URL. It's a
+  static snapshot, not a live feed — refresh it any time by
+  re-downloading `https://ghchart.rshah.org/0x0khalid` over the
+  existing file. (Unlike jdhruv.dev's live-fetched graph and real
+  Spotify/view-counter integrations, there's no backend behind any of
+  this — it's all static.)
 
 ## About text
 
