@@ -21,11 +21,32 @@
 </head>
 <body>
 
+<!-- Reusable icons, defined once -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="icon-camel" viewBox="0 0 120 74" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M27 45Q9 36 11 15"/>
+    <ellipse cx="9.5" cy="11.5" rx="7.5" ry="5.5"/>
+    <path d="M4 8.5 1 3M14 7l4-5"/>
+    <path d="M22 15h6"/>
+    <ellipse cx="46" cy="30" rx="14" ry="15"/>
+    <ellipse cx="74" cy="27" rx="15" ry="16"/>
+    <path d="M20 46q-3 9 8 12t22 2 24-1 15-5q6-3 3-9"/>
+    <path d="M30 53v16M46 55v16M68 54v16M84 51v16"/>
+    <path d="M96 44q13 3 11 16"/>
+  </symbol>
+  <symbol id="icon-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 2.1l4 4-4 4"/>
+    <path d="M3 12.7V12a4 4 0 0 1 4-4h14.8"/>
+    <path d="M7 21.9l-4-4 4-4"/>
+    <path d="M21 11.3V12a4 4 0 0 1-4 4H2.2"/>
+  </symbol>
+</svg>
+
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="header-inner">
     <a href="#top" class="brand" aria-label="Home">
-      <img src="pfp.jpg" alt="" class="avatar-mark" aria-hidden="true">
+      <span class="avatar-mark" aria-hidden="true">K</span>
     </a>
     <div class="header-spacer"></div>
     <nav class="main-nav">
@@ -75,11 +96,17 @@
 
     <!-- ============ HERO ============ -->
     <div class="hero-row">
-      <div class="hero-avatar">
-        <img src="pfp.jpg" alt="Khalid's avatar" class="hero-avatar-inner">
+      <div class="hero-avatar" id="hero-avatar" data-mode="photo">
+        <div class="hero-avatar-inner">
+          <img src="pfp.jpg" alt="Khalid's avatar" class="avatar-face avatar-photo">
+          <svg class="avatar-face avatar-camel" aria-hidden="true"><use href="#icon-camel"></use></svg>
+        </div>
       </div>
       <div class="hero-info">
         <div class="hero-top-line">
+          <button id="avatar-toggle" class="avatar-toggle-btn" type="button" aria-label="Toggle avatar" title="Toggle avatar">
+            <svg viewBox="0 0 24 24" width="13" height="13"><use href="#icon-swap"></use></svg>
+          </button>
           <span class="view-count" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/></svg>
             <span>—</span>
@@ -251,6 +278,7 @@
         <!-- EDIT: personalize or remove this line -->
         <span>Built with code and coffee</span>
       </div>
+      <svg class="footer-mascot" aria-hidden="true"><use href="#icon-camel"></use></svg>
     </div>
     <div class="dot-banner bottom" aria-hidden="true">
       <span class="tick bl"></span><span class="tick br"></span>
