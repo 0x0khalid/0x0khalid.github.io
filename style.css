@@ -107,15 +107,23 @@ kbd {
   width: 34px;
   height: 34px;
   border-radius: 8px;
-  background: var(--muted);
+  background: linear-gradient(150deg, var(--muted), var(--background));
   border: 1px solid var(--border);
   color: var(--foreground);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-weight: 900;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: -.02em;
+  transition: box-shadow .3s ease, transform .3s ease, border-color .3s ease;
+}
+.brand:hover .avatar-mark {
+  border-color: color-mix(in oklab, var(--foreground) 30%, var(--border));
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--foreground) 6%, transparent),
+              0 0 16px color-mix(in oklab, var(--foreground) 18%, transparent);
+  transform: translateY(-1px) scale(1.04);
 }
 
 .header-spacer { flex: 1; }
