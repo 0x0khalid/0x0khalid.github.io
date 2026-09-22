@@ -98,21 +98,13 @@ kbd {
 .brand { display: flex; align-items: center; }
 
 .avatar-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--muted);
-  border: 1px solid var(--border);
   color: var(--foreground);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   /* Departure Mono doesn't cover these superscript glyphs (⁵ᵉ⁹), so
      it falls back silently and can render inconsistently -- use a
      full-coverage system font here instead so it always shows as-is. */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .header-spacer { flex: 1; }
