@@ -454,6 +454,7 @@ html.dark .icon-moon { display: block; }
   font-family: var(--font-technical);
   font-size: 14px;
   line-height: 1.65;
+  word-spacing: -.12em;
   color: var(--foreground);
 }
 
@@ -538,14 +539,14 @@ html.dark .icon-moon { display: block; }
   align-items: center;
   justify-content: center;
 }
-.ti-title { flex: 1; font-family: var(--font-technical); font-weight: 500; font-size: 15px; }
+.ti-title { flex: 1; font-family: var(--font-technical); font-weight: 500; font-size: 15px; word-spacing: -.12em; }
 .ti-title .dim { font-weight: 400; color: var(--muted-foreground); }
 .ti-chevron { flex-shrink: 0; color: var(--muted-foreground); transition: transform .2s ease; }
 .timeline-item[open] .ti-chevron { transform: rotate(180deg); }
 
-.ti-meta { display: flex; align-items: center; gap: 8px; padding-left: 36px; font-family: var(--font-technical); font-size: 13px; color: var(--muted-foreground); margin-top: 2px; }
+.ti-meta { display: flex; align-items: center; gap: 8px; padding-left: 36px; font-family: var(--font-technical); font-size: 13px; word-spacing: -.12em; color: var(--muted-foreground); margin-top: 2px; }
 .ti-meta .sep { width: 1px; height: 12px; background: var(--border); }
-.ti-desc { padding-left: 36px; margin: 8px 0 0; font-family: var(--font-technical); font-size: 13px; color: var(--muted-foreground); }
+.ti-desc { padding-left: 36px; margin: 8px 0 0; font-family: var(--font-technical); font-size: 13px; word-spacing: -.12em; color: var(--muted-foreground); }
 .ti-tags { display: flex; flex-wrap: wrap; gap: 6px; padding-left: 36px; margin-top: 10px; }
 .ti-tags li {
   font-family: var(--font-mono);
@@ -586,6 +587,7 @@ html.dark .icon-moon { display: block; }
   font-size: 11px;
   color: var(--muted-foreground);
   letter-spacing: .04em;
+  word-spacing: -.08em;
   text-transform: uppercase;
 }
 
