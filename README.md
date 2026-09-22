@@ -24,6 +24,12 @@ from a different site — see below.
   and embedding it here is fine. It only ships weight 400 (regular);
   anywhere this page asks for a bolder weight, the browser synthesizes
   it, since there's no separate bold file.
+- **JetBrains Mono** is used for the About/Projects body content and
+  the footer's "Built in the SOC..." line — Departure Mono's stylized
+  look works well for headings and nav but reads less clearly for
+  denser paragraph text, so this swaps in a font actually designed
+  for reading monospace text comfortably. Self-hosted as
+  `fonts/JetBrainsMono-Variable.woff2`, also SIL OFL licensed.
 - **The second avatar** (`avatar-alt.png`) is the illustrated portrait
   you uploaded directly — click the toggle button next to the hero
   avatar (mirroring jdhruv.dev's "Toggle pfp" button, with a pop/spin
