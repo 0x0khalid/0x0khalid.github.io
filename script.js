@@ -159,20 +159,6 @@
   });
 })();
 
-// View count: hidden until the eye is clicked
-(function () {
-  const btn = document.getElementById("view-count-toggle");
-  const badge = document.getElementById("view-count-badge");
-  if (!btn || !badge) return;
-
-  btn.addEventListener("click", () => {
-    const show = badge.hidden;
-    badge.hidden = !show;
-    btn.setAttribute("aria-expanded", String(show));
-    btn.setAttribute("aria-label", show ? "Hide view count" : "Show view count");
-  });
-})();
-
 // Footer year
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();

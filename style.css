@@ -390,19 +390,6 @@ html.dark .icon-moon { display: block; }
   gap: 5px;
   color: var(--muted-foreground);
 }
-.view-count-eye {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  padding: 2px;
-  margin: -2px;
-  color: inherit;
-  cursor: pointer;
-  border-radius: 4px;
-}
-.view-count-eye:hover { color: var(--foreground); background: var(--accent); }
 .view-count-badge {
   height: 14px;
   width: auto;
@@ -410,7 +397,6 @@ html.dark .icon-moon { display: block; }
   filter: grayscale(1);
   border-radius: 2px;
 }
-.view-count-badge[hidden] { display: none; }
 html.dark .view-count-badge { filter: grayscale(1) invert(.85); }
 
 .hero-name-row { display: flex; align-items: center; gap: 6px; padding: 8px 0 4px; }
