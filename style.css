@@ -362,7 +362,7 @@ html.dark .icon-moon { display: block; }
 #hero-avatar[data-mode="photo"] .avatar-photo,
 #hero-avatar[data-mode="alt"] .avatar-alt {
   opacity: 1;
-  transform: scale(1) rotate(0deg);
+  transform: scale(1.12) rotate(0deg);
 }
 
 .hero-info { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 4px; padding-left: 4px; min-width: 0; }
@@ -464,6 +464,13 @@ html.dark .icon-moon { display: block; }
   border-radius: 16px;
   background: var(--card);
   padding: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  transition: box-shadow .2s ease, border-color .2s ease, transform .2s ease;
+}
+.now-playing-card:hover {
+  border-color: color-mix(in oklab, var(--foreground) 20%, var(--border));
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  transform: translateY(-1px);
 }
 .now-playing-embed {
   display: block;
@@ -476,12 +483,18 @@ html.dark .icon-moon { display: block; }
   align-items: center;
   justify-content: center;
   gap: 6px;
-  margin-top: 8px;
+  margin-top: 10px;
+  padding: 7px 0;
+  border-radius: 10px;
+  background: var(--muted);
   font-family: var(--font-mono);
   font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .02em;
   color: var(--muted-foreground);
+  transition: background-color .15s ease, color .15s ease;
 }
-.now-playing-fallback:hover { color: var(--foreground); }
+.now-playing-fallback:hover { background: var(--accent); color: var(--foreground); }
 
 /* Connect */
 .connect-row { display: flex; flex-wrap: wrap; gap: 10px; }
