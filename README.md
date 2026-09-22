@@ -56,7 +56,8 @@ Everything else is still a placeholder — search `index.html` for
 - Medium link (currently `#`)
 - Resume link (currently `resume.pdf`, which doesn't exist yet — add the file or remove the link)
 - Experience timeline (one placeholder entry)
-- Education (one placeholder entry)
+- Education dates (both entries still say "20XX—20XX")
+- The University of California entry (see note below on which campus)
 - Footer line ("Built with code and coffee")
 
 The GitHub activity chart already points at the real `0x0khalid` GitHub
@@ -64,6 +65,21 @@ account via ghchart.rshah.org — no edit needed there unless the username
 is wrong. Unlike jdhruv.dev's live-fetched contribution graph and real
 Spotify/view-counter integrations, this is a static image and static
 placeholders — there's no backend behind them.
+
+## Education icons
+
+Both institution badges in the Education panel (`.org-icon--uqu`,
+`.org-icon--uc`) are plain initials on a color chip — deliberately
+not each school's actual seal/crest, which is typically trademarked
+and more involved to reproduce accurately than this project should
+attempt. If you'd rather use the real logos, drop `uqu.png`/`uc.png`
+(or similar) into the project and swap the `<span class="org-icon">`
+for an `<img>`.
+
+The University of California entry doesn't specify which campus —
+UC is a ten-campus system (Berkeley, UCLA, San Diego, etc.), each
+with its own logo and its own extension/leadership programs. Fill in
+the actual campus and exact program name in `index.html`.
 
 ## About text
 

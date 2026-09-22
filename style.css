@@ -462,6 +462,25 @@ html.dark .icon-moon { display: block; }
 .timeline-group-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .timeline-group-head .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--tick-color); flex-shrink: 0; }
 .timeline-group-head h3 { margin: 0; font-size: 17px; font-weight: 500; }
+/* Small generic monogram badges to identify each institution -- not
+   an attempt to reproduce either university's official seal/crest,
+   just initials on a color chip, the way a favicon would. */
+.org-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 7px;
+  letter-spacing: -.02em;
+  color: #fff;
+}
+.org-icon--uqu { background: #0e6b3a; }
+.org-icon--uc { background: #1e6fae; }
 
 .timeline-list { position: relative; padding-left: 24px; display: flex; flex-direction: column; gap: 16px; }
 .timeline-list::before { content: ""; position: absolute; left: 3px; top: 4px; bottom: 4px; width: 1px; background: var(--border); }
