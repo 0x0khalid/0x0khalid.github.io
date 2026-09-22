@@ -486,7 +486,7 @@ html.dark .icon-moon { display: block; }
   color: var(--foreground);
 }
 
-.now-playing-wrap { max-width: 380px; margin: 20px auto 0; }
+.now-playing-wrap { max-width: 24rem; margin: 20px auto 0; }
 .now-playing-card {
   border: 1px solid var(--border);
   border-radius: 16px;
