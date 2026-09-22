@@ -4,7 +4,7 @@ Personal homepage, closely modeled on jdhruv.dev's real layout: bordered
 "screen-line" column with corner tick marks, diagonal-stripe section
 dividers, hero with avatar + name + status, an About panel (bullet list)
 with a Now Playing card, a Connect panel with six link pills, a GitHub
-Activity panel, and collapsible Experience/Education timelines. Colors,
+Activity panel, and collapsible Projects/Education timelines. Colors,
 spacing and the header/footer nav structure (Home, Projects, More
 dropdown, search, theme toggle) are pulled from jdhruv.dev's own
 compiled CSS and markup, not guessed. The typeface, however, is pulled
@@ -49,13 +49,13 @@ handle, and display name were available from the public page.
 Everything else is still a placeholder — search `index.html` for
 `EDIT:` comments to find every spot to personalize:
 
-- Nav "Projects" link (points at `#experience` for now) and "More"
-  dropdown items (currently empty placeholders)
+- "More" dropdown items (currently empty placeholders)
 - LinkedIn link (currently `#`, needs a real URL)
 - Email link (currently `mailto:you@example.com`)
 - Medium link (currently `#`)
 - Resume link (currently `resume.pdf`, which doesn't exist yet — add the file or remove the link)
-- Experience timeline (one placeholder entry)
+- Projects (one placeholder entry — the section that used to be
+  "Experience" was replaced with this on request)
 - Education dates (both entries still say "20XX—20XX")
 - The University of California entry (see note below on which campus)
 - Footer line ("Built with code and coffee")
