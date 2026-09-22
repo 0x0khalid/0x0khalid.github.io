@@ -359,6 +359,34 @@ html.dark .icon-moon { display: block; }
   transform: scale(.92) rotate(-6deg);
   transition: opacity .35s ease, transform .35s cubic-bezier(.34, 1.56, .64, 1);
 }
+
+/* Glitch transition on avatar toggle -- scanline flicker + RGB
+   channel split, briefly, while the avatar swaps */
+@keyframes avatar-glitch-jitter {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1.5px, 1.5px); }
+  80% { transform: translate(1.5px, -1px); }
+}
+@keyframes avatar-glitch-scan {
+  0% { background-position: 0 -10%; opacity: .6; }
+  100% { background-position: 0 110%; opacity: 0; }
+}
+#hero-avatar.is-glitching[data-mode="photo"] .avatar-photo,
+#hero-avatar.is-glitching[data-mode="alt"] .avatar-alt {
+  animation: avatar-glitch-jitter .3s steps(3, end) 2;
+  filter: drop-shadow(2px 0 0 rgba(255,45,85,.55)) drop-shadow(-2px 0 0 rgba(45,220,255,.55));
+}
+#hero-avatar.is-glitching .hero-avatar-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,.35) 0 1px, transparent 1px 3px);
+  mix-blend-mode: overlay;
+  animation: avatar-glitch-scan .5s linear;
+  pointer-events: none;
+}
 #hero-avatar[data-mode="photo"] .avatar-photo,
 #hero-avatar[data-mode="alt"] .avatar-alt {
   opacity: 1;

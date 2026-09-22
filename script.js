@@ -182,6 +182,11 @@
     const next = avatar.dataset.mode === "photo" ? "alt" : "photo";
     avatar.dataset.mode = next;
     btn.setAttribute("title", next === "alt" ? "Back to photo" : "Toggle avatar");
+
+    avatar.classList.remove("is-glitching");
+    void avatar.offsetWidth; // restart animation if clicked again quickly
+    avatar.classList.add("is-glitching");
+    setTimeout(() => avatar.classList.remove("is-glitching"), 500);
   });
 })();
 
