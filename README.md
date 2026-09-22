@@ -71,9 +71,26 @@ Everything else is still a placeholder — search `index.html` for
   self-hosted instead of loaded from that external URL. It's a
   static snapshot, not a live feed — refresh it any time by
   re-downloading `https://ghchart.rshah.org/0x0khalid` over the
-  existing file. (Unlike jdhruv.dev's live-fetched graph and real
-  Spotify/view-counter integrations, there's no backend behind any of
-  this — it's all static.)
+  existing file.
+
+## View counter — the one thing that isn't static
+
+The eye icon next to your name now shows a real, live page-view
+count, via [hits.sh](https://hits.sh) — a free hit-counter badge
+service, no signup needed. It's keyed to `0x0khalid.github.io`
+(see the `src` URL in `index.html`) and increments by one on every
+page load, anywhere the page is opened. This is the one part of the
+site that genuinely can't be self-hosted as a static file: a real
+counter needs a server keeping count somewhere, and GitHub Pages has
+no backend. Testing this while building it already bumped the count
+to 6 or so — that's just from my own curl requests, not real
+visitors, but worth knowing so the number isn't a surprise the first
+time you check the live site. If you'd rather start clean, change
+the key in the URL to anything unused (e.g.
+`0x0khalid-github-io-v2`) and it resets to zero. Unlike jdhruv.dev's
+live-fetched activity graph and Spotify integration, nothing else on
+this page has a real backend behind it — this counter is the
+exception.
 
 ## About text
 

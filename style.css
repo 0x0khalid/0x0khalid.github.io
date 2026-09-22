@@ -324,10 +324,16 @@ html.dark .icon-moon { display: block; }
   display: flex;
   align-items: center;
   gap: 5px;
-  font-family: var(--font-mono);
-  font-size: 12px;
   color: var(--muted-foreground);
 }
+.view-count-badge {
+  height: 14px;
+  width: auto;
+  opacity: .85;
+  filter: grayscale(1);
+  border-radius: 2px;
+}
+html.dark .view-count-badge { filter: grayscale(1) invert(.85); }
 
 .hero-name-row { display: flex; align-items: center; gap: 6px; padding: 8px 0 4px; }
 .hero-name {
