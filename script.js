@@ -6,6 +6,32 @@
   toggle?.addEventListener("click", () => {
     const isDark = root.classList.toggle("dark");
     try { localStorage.setItem("theme", isDark ? "dark" : "light"); } catch (e) {}
+    document.dispatchEvent(new CustomEvent("themechange", { detail: { isDark } }));
+  });
+})();
+
+// View count badge: background color matched to the page's own
+// background so the badge box visually disappears, leaving only the
+// number -- no square, like jdhruv.dev's plain live number. Only
+// increments once on page load; theme toggles just re-fetch the same
+// count in the new matching color, without counting another visit.
+(function () {
+  const img = document.getElementById("view-count-badge");
+  if (!img) return;
+
+  const LIGHT_BG = "ffffff";
+  const DARK_BG = "060607";
+
+  function badgeUrl(isDark, action) {
+    const bg = isDark ? DARK_BG : LIGHT_BG;
+    return `https://hits.sh/0x0khalid.github.io.svg?style=flat-square&action=${action}&color=${bg}&label=%20`;
+  }
+
+  const isDarkNow = document.documentElement.classList.contains("dark");
+  img.src = badgeUrl(isDarkNow, "increment");
+
+  document.addEventListener("themechange", (e) => {
+    img.src = badgeUrl(e.detail.isDark, "view");
   });
 })();
 

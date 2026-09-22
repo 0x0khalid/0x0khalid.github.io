@@ -79,15 +79,30 @@ Everything else is still a placeholder — search `index.html` for
 
 The eye icon next to your name shows a real, live page-view count,
 via [hits.sh](https://hits.sh) — a free hit-counter badge service,
-no signup needed. It's keyed to `0x0khalid.github.io` (see the `src`
-URL in `index.html`) and increments by one on every page load,
-anywhere the page is opened. This is the one part of the site that
-genuinely can't be self-hosted as a static file: a real counter
-needs a server keeping count somewhere, and GitHub Pages has none.
-If you'd rather start clean, change the key in the URL to anything
-unused (e.g. `0x0khalid-github-io-v2`) and it resets to zero. Unlike
-jdhruv.dev's live-fetched activity graph and Spotify integration,
-this counter is the one exception to "no backend" on this page.
+no signup needed. It's keyed to `0x0khalid.github.io` and increments
+by one on every page load, anywhere the page is opened. This is the
+one part of the site that genuinely can't be self-hosted as a static
+file: a real counter needs a server keeping count somewhere, and
+GitHub Pages has none.
+
+hits.sh only returns an image badge (with a background box), not
+plain text — every free, no-signup counter service tested has the
+same limit, since browsers block reading a cross-origin count as raw
+text unless the service explicitly allows it (CORS), and none of the
+no-signup ones do. To still get jdhruv.dev's "no square, just a
+number" look, `script.js` sets the badge's background color to
+exactly match the page's own background (white in light mode,
+`#060607` in dark mode) — hits.sh auto-picks a contrasting text
+color for whatever background it's given, so the box's edges
+disappear into the page and only the digits read as visible. The
+script re-fetches the badge (without incrementing again) whenever
+you toggle the theme, so it keeps matching whichever mode is active.
+
+If you'd rather start clean, change the counter key in `script.js`
+(`badgeUrl`) to anything unused (e.g. `0x0khalid-github-io-v2`) and
+it resets to zero. Unlike jdhruv.dev's live-fetched activity graph
+and Spotify integration, this counter is the one exception to
+"no backend" on this page.
 
 ## Now Playing
 
