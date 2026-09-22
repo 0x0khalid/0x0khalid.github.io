@@ -1,26 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Khalid</title>
 <meta name="description" content="Khalid — personal site">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;900&family=Geist+Mono:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+    }
+  } catch (e) {}
+</script>
 </head>
 <body>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="header-inner">
-    <a href="#top" class="brand">
-      <span class="avatar" aria-hidden="true">K</span>
+    <a href="#top" class="brand" aria-label="Home">
+      <span class="avatar-mark" aria-hidden="true">K</span>
     </a>
+    <div class="header-spacer"></div>
     <nav class="main-nav">
       <a href="#top" class="nav-link active">Home</a>
+      <!-- EDIT: point at a real projects page/section once you have one -->
+      <a href="#experience" class="nav-link">Projects</a>
+      <div class="more-wrap">
+        <button id="more-btn" class="nav-link more-btn" type="button" aria-expanded="false" aria-haspopup="true">
+          More
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div id="more-menu" class="more-menu" hidden>
+          <!-- EDIT: add real links here (blog, uses, etc.) -->
+          <a href="#" class="more-item">Blog</a>
+          <a href="#" class="more-item">Uses</a>
+        </div>
+      </div>
     </nav>
     <div class="header-actions">
       <button id="search-btn" class="search-btn" type="button">
@@ -28,14 +50,14 @@
         <kbd>⌘K</kbd>
       </button>
       <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme">
-        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
       </button>
     </div>
   </div>
 </header>
 
-<!-- ============ SEARCH MODAL (visual only) ============ -->
+<!-- ============ SEARCH MODAL (visual only — no index behind it) ============ -->
 <div id="search-modal" class="search-modal" hidden>
   <div class="search-backdrop"></div>
   <div class="search-panel">
@@ -45,98 +67,196 @@
 </div>
 
 <main id="top">
+  <div class="frame">
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <h1 class="hero-name">Khalid</h1>
-    <p class="hero-sub"><!-- EDIT: role/title --> Software Engineer</p>
-    <p class="hero-status">
-      <span class="status-dot"></span>
-      <!-- EDIT: status line --> Building things
-    </p>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section class="about">
-    <!-- EDIT: replace with your real bio -->
-    <p>I like building things that are useful, not just impressive. Most of what I make starts as a small tool to solve my own problem, then grows from there.</p>
-    <p>I'm curious about how the tools we build end up shaping how we think and work — that tension between convenience and control is something I keep coming back to.</p>
-    <p>Still early in the process of figuring most of this out. Trying to stay honest about what I don't know yet, and treat that as the interesting part.</p>
-  </section>
-
-  <!-- ============ NOW PLAYING ============ -->
-  <section class="now-playing" aria-label="Currently listening to">
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
-    <span class="np-label">Not listening</span>
-  </section>
-
-  <!-- ============ CONNECT ============ -->
-  <section class="connect">
-    <h2 class="section-label">Connect</h2>
-    <div class="connect-grid">
-      <a class="connect-link" href="https://github.com/0x0khalid" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6a4.6 4.6 0 0 1 1.2-3.2 4.3 4.3 0 0 1 .1-3.2s1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5a4.3 4.3 0 0 1 .1 3.2 4.6 4.6 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>
-        <span>GitHub</span>
-      </a>
-      <!-- EDIT: confirm/replace X handle -->
-      <a class="connect-link" href="https://x.com/0x0khalid" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.9L4.5 22H1.4l8.2-9.4L1 2h7.1l4.9 6.3L18.9 2zm-1.2 18h1.9L7.3 4H5.2l12.5 16z"/></svg>
-        <span>X</span>
-      </a>
-      <!-- EDIT: add real LinkedIn URL -->
-      <a class="connect-link" href="#" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97V21h-4V9z"/></svg>
-        <span>LinkedIn</span>
-      </a>
-      <!-- EDIT: add real email -->
-      <a class="connect-link" href="mailto:you@example.com">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
-        <span>Email</span>
-      </a>
+    <div class="dot-banner top" aria-hidden="true">
+      <span class="tick tl"></span><span class="tick tr"></span>
     </div>
-  </section>
 
-  <!-- ============ GITHUB ACTIVITY ============ -->
-  <section class="activity">
-    <h2 class="section-label">GitHub Activity</h2>
-    <div class="activity-chart">
-      <img src="https://ghchart.rshah.org/0x0khalid" alt="0x0khalid's GitHub contribution chart" loading="lazy">
-    </div>
-  </section>
-
-  <!-- ============ EXPERIENCE ============ -->
-  <section class="experience">
-    <h2 class="section-label">Experience</h2>
-    <!-- EDIT: replace with real work history -->
-    <div class="timeline-item">
-      <div class="timeline-dates">Present</div>
-      <div class="timeline-body">
-        <h3>Add your role here</h3>
-        <p class="timeline-org">Company / Project</p>
-        <p class="timeline-desc">Short description of what you worked on and the stack you used.</p>
+    <!-- ============ HERO ============ -->
+    <div class="hero-row">
+      <div class="hero-avatar">
+        <div class="hero-avatar-inner">K</div>
+      </div>
+      <div class="hero-info">
+        <div class="hero-top-line">
+          <span class="view-count" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/></svg>
+            <span>—</span>
+          </span>
+        </div>
+        <div class="hero-name-row">
+          <h1 class="hero-name">Khalid</h1>
+        </div>
+        <!-- EDIT: role/title -->
+        <p class="hero-sub">Software Engineer</p>
+        <span class="hero-status">
+          <span class="status-dot"></span>
+          <!-- EDIT: status line -->
+          <span>Building things</span>
+        </span>
       </div>
     </div>
-  </section>
 
-  <!-- ============ EDUCATION ============ -->
-  <section class="education">
-    <h2 class="section-label">Education</h2>
-    <!-- EDIT: replace with real education -->
-    <div class="timeline-item">
-      <div class="timeline-dates">20XX–20XX</div>
-      <div class="timeline-body">
-        <h3>Degree / Program</h3>
-        <p class="timeline-org">School name</p>
+    <div class="stripe-divider" aria-hidden="true"></div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="panel" id="about">
+      <header class="panel-header"><h2>About</h2></header>
+      <div class="panel-body">
+        <!-- EDIT: replace with your real bio -->
+        <ul class="about-list">
+          <li>I like building things that are useful, not just impressive. Most of what I make starts as a small tool to solve my own problem, then grows from there.</li>
+          <li>I'm curious about how the tools we build end up shaping how we think and work — that tension between convenience and control is something I keep coming back to.</li>
+          <li>Still early in the process of figuring most of this out. Trying to stay honest about what I don't know yet, and treat that as the interesting part.</li>
+        </ul>
+
+        <div class="now-playing-wrap">
+          <div class="now-playing-card">
+            <div class="np-art" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </div>
+            <div class="np-info">
+              <span class="np-status"><span class="np-dot"></span><span>Not listening</span></span>
+              <span class="np-track">Nothing playing</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <div class="stripe-divider" aria-hidden="true"></div>
+
+    <!-- ============ CONNECT ============ -->
+    <section class="panel" id="connect">
+      <header class="panel-header"><h2>Connect</h2></header>
+      <div class="panel-body">
+        <div class="connect-row">
+          <a class="connect-pill" href="https://github.com/0x0khalid" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 496 512" width="14" height="14" fill="currentColor"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <!-- EDIT: confirm/replace X handle -->
+          <a class="connect-pill" href="https://x.com/0x0khalid" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 512 512" width="14" height="14" fill="currentColor"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+            <span>Twitter</span>
+          </a>
+          <!-- EDIT: add real LinkedIn URL -->
+          <a class="connect-pill" href="#" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 448 512" width="14" height="14" fill="currentColor"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <!-- EDIT: add real email -->
+          <a class="connect-pill" href="mailto:you@example.com" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 512 512" width="14" height="14" fill="currentColor"><path d="M437.332 80H74.668C51.199 80 32 99.198 32 122.667v266.666C32 412.802 51.199 432 74.668 432h362.664C460.801 432 480 412.802 480 389.333V122.667C480 99.198 460.801 80 437.332 80zM432 170.667L256 288 80 170.667V128l176 117.333L432 128v42.667z"/></svg>
+            <span>Mail</span>
+          </a>
+          <!-- EDIT: add real Medium/blog URL -->
+          <a class="connect-pill" href="#" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 448 512" width="14" height="14" fill="currentColor"><path d="M0 32v448h448V32H0zm372.2 106.1l-24 23c-2.1 1.6-3.1 4.2-2.7 6.7v169.3c-.4 2.6.6 5.2 2.7 6.7l23.5 23v5.1h-118V367l24.3-23.6c2.4-2.4 2.4-3.1 2.4-6.7V199.8l-67.6 171.6h-9.1L125 199.8v115c-.7 4.8 1 9.7 4.4 13.2l31.6 38.3v5.1H71.2v-5.1l31.6-38.3c3.4-3.5 4.9-8.4 4.1-13.2v-133c.4-3.7-1-7.3-3.8-9.8L75 138.1V133h87.3l67.4 148L289 133.1h83.2v5z"/></svg>
+            <span>Medium</span>
+          </a>
+          <!-- EDIT: link a real resume.pdf once you have one -->
+          <a class="connect-pill" href="resume.pdf" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 448 512" width="14" height="14" fill="currentColor"><path d="M364.2 83.8c-24.4-24.4-64-24.4-88.4 0l-184 184c-42.1 42.1-42.1 110.3 0 152.4s110.3 42.1 152.4 0l152-152c10.9-10.9 28.7-10.9 39.6 0s10.9 28.7 0 39.6l-152 152c-64 64-167.6 64-231.6 0s-64-167.6 0-231.6l184-184c46.3-46.3 121.3-46.3 167.6 0s46.3 121.3 0 167.6l-176 176c-28.6 28.6-75 28.6-103.6 0s-28.6-75 0-103.6l144-144c10.9-10.9 28.7-10.9 39.6 0s10.9 28.7 0 39.6l-144 144c-6.7 6.7-6.7 17.7 0 24.4s17.7 6.7 24.4 0l176-176c24.4-24.4 24.4-64 0-88.4z"/></svg>
+            <span>Resume</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="stripe-divider" aria-hidden="true"></div>
+
+    <!-- ============ GITHUB ACTIVITY ============ -->
+    <section class="panel">
+      <header class="panel-header"><h2>GitHub Activity</h2></header>
+      <div class="panel-body activity-body">
+        <img class="activity-chart" src="https://ghchart.rshah.org/0x0khalid" alt="0x0khalid's GitHub contribution chart" loading="lazy">
+      </div>
+    </section>
+
+    <div class="stripe-divider" aria-hidden="true"></div>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="panel" id="experience">
+      <header class="panel-header"><h2>Experience</h2></header>
+      <div class="panel-body timeline-body">
+        <!-- EDIT: replace with real work history -->
+        <div class="timeline-group">
+          <div class="timeline-group-head">
+            <span class="dot"></span>
+            <h3>Company / Project</h3>
+          </div>
+          <div class="timeline-list">
+            <details class="timeline-item">
+              <summary>
+                <span class="ti-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                </span>
+                <span class="ti-title">Add your role here</span>
+                <svg class="ti-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15L12 20L17 15"/><path d="M7 9L12 4L17 9"/></svg>
+              </summary>
+              <div class="ti-meta">
+                <span>Employment type</span>
+                <span class="sep"></span>
+                <span>Start—End</span>
+              </div>
+              <p class="ti-desc">Short description of what you worked on and the stack you used.</p>
+              <ul class="ti-tags">
+                <li>Tag</li><li>Tag</li><li>Tag</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stripe-divider" aria-hidden="true"></div>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="panel" id="education">
+      <header class="panel-header"><h2>Education</h2></header>
+      <div class="panel-body timeline-body">
+        <!-- EDIT: replace with real education -->
+        <div class="timeline-group">
+          <div class="timeline-group-head">
+            <span class="dot"></span>
+            <h3>School name</h3>
+          </div>
+          <div class="timeline-list">
+            <details class="timeline-item">
+              <summary>
+                <span class="ti-icon">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+                </span>
+                <span class="ti-title">Degree <span class="dim">· Field of study</span></span>
+                <svg class="ti-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15L12 20L17 15"/><path d="M7 9L12 4L17 9"/></svg>
+              </summary>
+              <div class="ti-meta">
+                <span>20XX—20XX</span>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
 </main>
 
 <footer class="site-footer">
-  <!-- EDIT: personalize or remove this line -->
-  <p class="footer-quote">Still building.</p>
-  <p class="footer-copy">© <span id="year"></span> Khalid</p>
+  <div class="frame footer-frame">
+    <div class="footer-row">
+      <div class="footer-text">
+        <span>© <span id="year"></span> Khalid</span>
+        <!-- EDIT: personalize or remove this line -->
+        <span>Built with code and coffee</span>
+      </div>
+    </div>
+    <div class="dot-banner bottom" aria-hidden="true">
+      <span class="tick bl"></span><span class="tick br"></span>
+    </div>
+  </div>
 </footer>
 
 <script src="script.js"></script>

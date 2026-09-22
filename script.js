@@ -1,14 +1,11 @@
-// Theme toggle with persistence
+// Theme toggle (class-based, matches jdhruv.dev's next-themes setup) + persistence
 (function () {
   const root = document.documentElement;
-  const stored = localStorage.getItem("theme");
-  if (stored) root.setAttribute("data-theme", stored);
-
   const toggle = document.getElementById("theme-toggle");
+
   toggle?.addEventListener("click", () => {
-    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
+    const isDark = root.classList.toggle("dark");
+    try { localStorage.setItem("theme", isDark ? "dark" : "light"); } catch (e) {}
   });
 })();
 
@@ -39,5 +36,34 @@
   });
 })();
 
+// "More" nav dropdown
+(function () {
+  const btn = document.getElementById("more-btn");
+  const menu = document.getElementById("more-menu");
+  if (!btn || !menu) return;
+
+  function close() {
+    menu.hidden = true;
+    btn.setAttribute("aria-expanded", "false");
+  }
+  function toggle() {
+    const willOpen = menu.hidden;
+    menu.hidden = !willOpen;
+    btn.setAttribute("aria-expanded", String(willOpen));
+  }
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggle();
+  });
+  document.addEventListener("click", (e) => {
+    if (!menu.hidden && !menu.contains(e.target) && e.target !== btn) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+})();
+
 // Footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
