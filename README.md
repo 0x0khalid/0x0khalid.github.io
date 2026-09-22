@@ -5,25 +5,25 @@ Personal homepage, closely modeled on jdhruv.dev's real layout: bordered
 dividers, hero with avatar + name + status, an About panel (bullet list)
 with a Now Playing card, a Connect panel with six link pills, a GitHub
 Activity panel, and collapsible Experience/Education timelines. Colors,
-fonts (Geist / Geist Mono), spacing and the header/footer nav structure
-(Home, Projects, More dropdown, search, theme toggle) are pulled from
-jdhruv.dev's own compiled CSS and markup, not guessed.
-
-One real difference: jdhruv.dev's pixel-style headings use Vercel's
-custom "GeistPixel" typeface, which isn't publicly distributed. This
-site approximates it with Geist Mono at a heavy weight instead.
+spacing and the header/footer nav structure (Home, Projects, More
+dropdown, search, theme toggle) are pulled from jdhruv.dev's own
+compiled CSS and markup, not guessed. The typeface, however, is pulled
+from a different site — see below.
 
 ## Fonts and icons — where they actually came from
 
-- **Geist / Geist Mono** are self-hosted here as `fonts/Geist-Variable.woff2`
-  and `fonts/GeistMono-Variable.woff2`, downloaded directly from Google
-  Fonts' own font files (both are variable fonts, covering every weight
-  400-900 in one file each). Earlier this loaded them from a
-  `fonts.googleapis.com` `<link>` instead, which depends on two external
-  origins (`fonts.googleapis.com` for the CSS, `fonts.gstatic.com` for
-  the actual font binaries) both being reachable and unblocked in
-  whatever browser or sandbox renders the page. Self-hosting removes
-  that dependency entirely.
+- **Departure Mono** is the site-wide font, taken from
+  [rohith.net](https://rohith.net) — checked its actual compiled
+  stylesheet (not guessed) and found it uses this one monospace font
+  for everything: body text, code, and headings all inherit it there,
+  no separate heading font. Downloaded straight from
+  `rohith.net/fonts/DepartureMono-Regular.woff2` and self-hosted here
+  as `fonts/DepartureMono-Regular.woff2`. It's licensed under the SIL
+  Open Font License (confirmed at
+  [departuremono.com](https://departuremono.com)), so redistributing
+  and embedding it here is fine. It only ships weight 400 (regular);
+  anywhere this page asks for a bolder weight, the browser synthesizes
+  it, since there's no separate bold file.
 - **The camel** (`camel.svg`, used for the avatar-toggle and the footer
   mascot) is Twemoji's dromedary camel emoji, not hand-drawn — see
   [github.com/jdecked/twemoji](https://github.com/jdecked/twemoji).
