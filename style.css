@@ -595,13 +595,17 @@ html.dark .icon-moon { display: block; }
   color: var(--foreground);
   letter-spacing: -.01em;
 }
-.footer-text span:last-child {
+.footer-tagline {
   font-family: var(--font-technical);
-  font-size: 11px;
+  font-size: 12.5px;
+  font-weight: 400;
   color: var(--muted-foreground);
-  letter-spacing: .04em;
-  word-spacing: -.08em;
-  text-transform: uppercase;
+  letter-spacing: .01em;
+}
+.footer-highlight {
+  color: var(--foreground);
+  font-weight: 600;
+  letter-spacing: .06em;
 }
 
 @media (max-width: 480px) {
