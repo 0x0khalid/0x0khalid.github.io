@@ -173,15 +173,38 @@ kbd {
 .search-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 10px;
-  background: var(--muted);
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px;
+  background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 7px;
+  border-radius: 999px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
   color: var(--muted-foreground);
   font-family: var(--font-sans);
   font-size: 13px;
   cursor: pointer;
+  transition: box-shadow .15s ease;
+}
+.search-btn:hover { box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+.search-btn-label { display: none; }
+.search-btn-kbd { display: flex; align-items: center; gap: 3px; }
+.search-btn-kbd kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 3px;
+  border-radius: 4px;
+  background: color-mix(in oklab, var(--foreground) 6%, transparent);
+  box-shadow: inset 0 -1px 2px color-mix(in oklab, var(--foreground) 8%, transparent);
+  font-family: var(--font-sans);
+  font-size: 11px;
+}
+@media (max-width: 480px) {
+  .search-btn-label { display: inline; }
+  .search-btn-kbd { display: none; }
 }
 
 .icon-btn {
@@ -539,6 +562,5 @@ html.dark .icon-moon { display: block; }
 
 @media (max-width: 480px) {
   .main-nav { display: none; }
-  .search-btn span:first-child { display: none; }
   .connect-row { gap: 8px; }
 }
