@@ -63,6 +63,7 @@
   <div class="search-backdrop"></div>
   <div class="search-panel">
     <input id="search-input" type="text" placeholder="Search this site…" autocomplete="off">
+    <ul id="search-results" class="search-results"></ul>
     <p class="search-hint">Press <kbd>Esc</kbd> to close</p>
   </div>
 </div>
@@ -165,7 +166,7 @@
     <div class="stripe-divider" aria-hidden="true"></div>
 
     <!-- ============ GITHUB ACTIVITY ============ -->
-    <section class="panel">
+    <section class="panel" id="activity">
       <header class="panel-header"><h2>GitHub Activity</h2></header>
       <div class="panel-body activity-body">
         <img class="activity-chart" src="github-activity.svg" alt="0x0khalid's GitHub contribution chart" loading="lazy">

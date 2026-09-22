@@ -248,6 +248,33 @@ html.dark .icon-moon { display: block; }
   font-size: 14px;
 }
 #search-input:focus { outline: 1px solid var(--foreground); }
+
+.search-results {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  max-height: 260px;
+  overflow-y: auto;
+}
+.search-results:empty { margin: 0; }
+.search-result {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 9px 10px;
+  border-radius: 7px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--foreground);
+}
+.search-result[data-active="true"], .search-result:hover { background: var(--accent); }
+.search-result .sr-title { display: block; font-size: 13px; font-weight: 500; }
+.search-result .sr-snippet { display: block; margin-top: 2px; font-size: 12px; color: var(--muted-foreground); }
+.search-result mark { background: color-mix(in oklab, var(--foreground) 18%, transparent); color: inherit; border-radius: 2px; }
+.search-empty { padding: 10px 2px; font-size: 12px; color: var(--muted-foreground); }
+
 .search-hint { margin: 10px 0 0; font-size: 12px; color: var(--muted-foreground); }
 
 /* ---------- Frame (bordered column shared by main + footer) ---------- */
