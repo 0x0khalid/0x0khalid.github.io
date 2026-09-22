@@ -75,10 +75,19 @@ Everything else is still a placeholder — search `index.html` for
   re-downloading `https://ghchart.rshah.org/0x0khalid` over the
   existing file.
 
-Unlike jdhruv.dev's live-fetched activity graph and Spotify/view-counter
-integrations, there's no backend behind anything on this page — it's
-all static, including the eye icon next to your name, which is just a
-decorative "—" placeholder, not a real counter.
+## View counter
+
+The eye icon next to your name shows a real, live page-view count,
+via [hits.sh](https://hits.sh) — a free hit-counter badge service,
+no signup needed. It's keyed to `0x0khalid.github.io` (see the `src`
+URL in `index.html`) and increments by one on every page load,
+anywhere the page is opened. This is the one part of the site that
+genuinely can't be self-hosted as a static file: a real counter
+needs a server keeping count somewhere, and GitHub Pages has none.
+If you'd rather start clean, change the key in the URL to anything
+unused (e.g. `0x0khalid-github-io-v2`) and it resets to zero. Unlike
+jdhruv.dev's live-fetched activity graph and Spotify integration,
+this counter is the one exception to "no backend" on this page.
 
 ## Now Playing
 
