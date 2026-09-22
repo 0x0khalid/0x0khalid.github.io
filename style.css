@@ -393,11 +393,9 @@ html.dark .icon-moon { display: block; }
 .view-count-badge {
   height: 14px;
   width: auto;
-  opacity: .85;
-  filter: grayscale(1);
-  border-radius: 2px;
+  opacity: .8;
+  border-radius: 3px;
 }
-html.dark .view-count-badge { filter: grayscale(1) invert(.85); }
 
 .hero-name-row { display: flex; align-items: center; gap: 6px; padding: 8px 0 4px; }
 .hero-name {
