@@ -38,6 +38,9 @@
   --tick-color: #d4d4d8;
   --zinc-50: #fafafa;
   --zinc-900: #18181b;
+  --purple: #8b5cf6;
+  --purple-hover: #7c3aed;
+  --purple-fg: #ffffff;
 
   --font-sans: "Departure Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --font-mono: "Departure Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -176,17 +179,17 @@ kbd {
   gap: 6px;
   height: 32px;
   padding: 0 10px;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: var(--purple);
+  border: 1px solid var(--purple);
   border-radius: 999px;
   box-shadow: 0 1px 2px rgba(0,0,0,.04);
-  color: var(--muted-foreground);
+  color: var(--purple-fg);
   font-family: var(--font-sans);
   font-size: 13px;
   cursor: pointer;
-  transition: box-shadow .15s ease;
+  transition: background-color .15s ease, box-shadow .15s ease;
 }
-.search-btn:hover { box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+.search-btn:hover { background: var(--purple-hover); box-shadow: 0 2px 6px rgba(0,0,0,.08); }
 .search-btn-label { display: none; }
 .search-btn-kbd { display: flex; align-items: center; gap: 3px; }
 .search-btn-kbd kbd {
@@ -197,8 +200,9 @@ kbd {
   height: 18px;
   padding: 0 3px;
   border-radius: 4px;
-  background: color-mix(in oklab, var(--foreground) 6%, transparent);
-  box-shadow: inset 0 -1px 2px color-mix(in oklab, var(--foreground) 8%, transparent);
+  background: rgba(255,255,255,.2);
+  box-shadow: inset 0 -1px 2px rgba(0,0,0,.15);
+  color: var(--purple-fg);
   font-family: var(--font-sans);
   font-size: 11px;
 }
@@ -213,13 +217,14 @@ kbd {
   justify-content: center;
   width: 32px;
   height: 32px;
-  background: transparent;
-  border: 1px solid var(--border);
+  background: var(--purple);
+  border: 1px solid var(--purple);
   border-radius: 7px;
-  color: var(--muted-foreground);
+  color: var(--purple-fg);
   cursor: pointer;
+  transition: background-color .15s ease;
 }
-.icon-btn:hover { color: var(--foreground); }
+.icon-btn:hover { background: var(--purple-hover); }
 .icon-moon { display: none; }
 html.dark .icon-sun { display: none; }
 html.dark .icon-moon { display: block; }
@@ -405,12 +410,12 @@ html.dark .icon-moon { display: block; }
   height: 28px;
   border-radius: 8px;
   border: none;
-  background: none;
-  color: var(--muted-foreground);
+  background: var(--purple);
+  color: var(--purple-fg);
   cursor: pointer;
-  transition: background-color .15s ease, color .15s ease, transform .4s cubic-bezier(.34, 1.56, .64, 1);
+  transition: background-color .15s ease, transform .4s cubic-bezier(.34, 1.56, .64, 1);
 }
-.avatar-toggle-btn:hover { background: var(--accent); color: var(--foreground); }
+.avatar-toggle-btn:hover { background: var(--purple-hover); }
 .avatar-toggle-btn:active { transform: rotate(180deg) scale(1.15); }
 .view-count {
   display: flex;
@@ -514,15 +519,15 @@ html.dark .icon-moon { display: block; }
   margin-top: 10px;
   padding: 7px 0;
   border-radius: 10px;
-  background: var(--muted);
+  background: var(--purple);
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: .02em;
-  color: var(--muted-foreground);
-  transition: background-color .15s ease, color .15s ease;
+  color: var(--purple-fg);
+  transition: background-color .15s ease;
 }
-.now-playing-fallback:hover { background: var(--accent); color: var(--foreground); }
+.now-playing-fallback:hover { background: var(--purple-hover); }
 
 /* Connect */
 .connect-row { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -533,16 +538,16 @@ html.dark .icon-moon { display: block; }
   height: 36px;
   padding: 0 14px;
   border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--card);
+  border: 1px solid var(--purple);
+  background: var(--purple);
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 500;
-  color: var(--foreground);
+  color: var(--purple-fg);
   box-shadow: 0 1px 2px rgba(0,0,0,.04);
   transition: background-color .2s ease, box-shadow .2s ease, transform .15s ease;
 }
-.connect-pill:hover { background: var(--muted); box-shadow: 0 2px 6px rgba(0,0,0,.08); transform: translateY(-1px); }
+.connect-pill:hover { background: var(--purple-hover); box-shadow: 0 2px 6px rgba(0,0,0,.08); transform: translateY(-1px); }
 
 /* GitHub activity */
 .activity-body { display: flex; justify-content: center; }
