@@ -52,8 +52,6 @@ Everything else is still a placeholder — search `index.html` for
 - "More" dropdown items (currently empty placeholders)
 - LinkedIn link (currently `#`, needs a real URL)
 - Email link (currently `mailto:you@example.com`)
-- Medium link (currently `#`)
-- Resume link (currently `resume.pdf`, which doesn't exist yet — add the file or remove the link)
 - Footer line ("Built with code and coffee")
 
 ## Projects and GitHub Activity — what's actually real
