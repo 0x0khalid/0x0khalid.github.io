@@ -4,7 +4,7 @@ Personal homepage, closely modeled on jdhruv.dev's real layout: bordered
 "screen-line" column with corner tick marks, diagonal-stripe section
 dividers, hero with avatar + name + status, an About panel (bullet list)
 with a Now Playing card, a Connect panel with six link pills, a GitHub
-Activity panel, and collapsible Projects/Education timelines. Colors,
+Activity panel, and a collapsible Projects timeline. Colors,
 spacing and the header/footer nav structure (Home, Projects, More
 dropdown, search, theme toggle) are pulled from jdhruv.dev's own
 compiled CSS and markup, not guessed. The typeface, however, is pulled
@@ -56,8 +56,6 @@ Everything else is still a placeholder — search `index.html` for
 - Resume link (currently `resume.pdf`, which doesn't exist yet — add the file or remove the link)
 - Projects (one placeholder entry — the section that used to be
   "Experience" was replaced with this on request)
-- Education dates (both entries still say "20XX—20XX")
-- The University of California entry (see note below on which campus)
 - Footer line ("Built with code and coffee")
 
 The GitHub activity chart already points at the real `0x0khalid` GitHub
@@ -65,21 +63,6 @@ account via ghchart.rshah.org — no edit needed there unless the username
 is wrong. Unlike jdhruv.dev's live-fetched contribution graph and real
 Spotify/view-counter integrations, this is a static image and static
 placeholders — there's no backend behind them.
-
-## Education icons
-
-Both institution badges in the Education panel (`.org-icon--uqu`,
-`.org-icon--uc`) are plain initials on a color chip — deliberately
-not each school's actual seal/crest, which is typically trademarked
-and more involved to reproduce accurately than this project should
-attempt. If you'd rather use the real logos, drop `uqu.png`/`uc.png`
-(or similar) into the project and swap the `<span class="org-icon">`
-for an `<img>`.
-
-The University of California entry doesn't specify which campus —
-UC is a ten-campus system (Berkeley, UCLA, San Diego, etc.), each
-with its own logo and its own extension/leadership programs. Fill in
-the actual campus and exact program name in `index.html`.
 
 ## About text
 
