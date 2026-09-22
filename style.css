@@ -499,7 +499,7 @@ html.dark .icon-moon { display: block; }
 .site-footer { padding: 0 0 24px; }
 .footer-frame { border-top: none; }
 .footer-row {
-  padding: 40px 16px 12px;
+  padding: 72px 16px 12px;
   border-left: 1px solid var(--edge);
   border-right: 1px solid var(--edge);
 }
