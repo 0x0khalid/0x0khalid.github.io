@@ -318,9 +318,13 @@ html.dark .icon-moon { display: block; }
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  color: #3ba7ec;
 }
 @media (min-width: 640px) { .verified-badge { width: 18px; height: 18px; } }
+/* Two real layers instead of one flat cutout shape: a solid badge
+   behind a solid white checkmark, so the check reads properly against
+   any page background (light or dark), like an actual verified badge. */
+.verified-badge .badge-shell { fill: #3ba7ec; }
+.verified-badge .badge-check { fill: #fff; }
 
 .hero-sub {
   margin: 0 0 8px;
